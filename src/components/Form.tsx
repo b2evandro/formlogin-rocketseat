@@ -1,10 +1,17 @@
-import React, { InputHTMLAttributes } from "react";
+import React from "react";
 import styled from "styled-components";
 import lock from "../assets/lock.svg";
 import loginIcone from "../assets/log-in.svg";
 import mail from "../assets/mail.svg";
 
-type InputProps = InputHTMLAttributes<HTMLInputElement> & Props;
+interface IInputProps {
+  label: string;
+  name: string;
+  type: string;
+  placeHolder: string;
+  required?: boolean;
+  src?: string;
+}
 
 const Container = styled.div`
   width: 100%;
@@ -128,7 +135,7 @@ const Logar = styled.div`
     color: ${(props) => props.theme.colors.textTitle};
   }
 `;
-function InputBase({ label, name, ...rest }: InputProps) {
+function InputBase({ label, name, ...rest }: IInputProps) {
   return (
     <Input>
       <label htmlFor={name}>{label}</label>
@@ -152,7 +159,6 @@ export const Form: React.FC<{}> = () => {
           label="E-mail"
           name="email"
           type="email"
-          autofocus
           src={mail}
           required={true}
           placeHolder="Digite seu Email"
