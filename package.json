@@ -1,7 +1,7 @@
 {
   "name": "form",
   "version": "0.0.0",
-  "homepage": "./",
+  "homepage": "https://b2evandro.github.io/formlogin-rocketseat/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
